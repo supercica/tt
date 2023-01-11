@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\GameController;
-use App\Http\Controllers\GameDetailController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
@@ -40,6 +39,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/user/show/{user}', [UserController::class, 'show'])->name('user.show');
     Route::get('/games', [GameController::class, 'index'])->name('games.index');
+    Route::get('/games/create', [GameController::class, 'create'])->name('games.create');
+    Route::post('/games', [GameController::class, 'store'])->name('games.store');
+    Route::get('/games/edit/{game}', [GameController::class, 'edit'])->name('games.edit');
+    Route::post('/games/update/{game}', [GameController::class, 'update'])->name('games.update');
 });
 
 require __DIR__.'/auth.php';
