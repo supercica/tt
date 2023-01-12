@@ -39,16 +39,16 @@ export default function UpdatePasswordForm({ className }) {
     return (
         <section className={className}>
             <header>
-                <h2 className="text-lg font-medium text-gray-900">Update Password</h2>
+                <h2 className="text-lg font-medium text-gray-900">Promena lozinke</h2>
 
                 <p className="mt-1 text-sm text-gray-600">
-                    Ensure your account is using a long, random password to stay secure.
+                    Koristite sigurnu lozinku
                 </p>
             </header>
 
             <form onSubmit={updatePassword} className="mt-6 space-y-6">
                 <div>
-                    <InputLabel for="current_password" value="Current Password" />
+                    <InputLabel for="current_password" value="Trenutna lozinka" />
 
                     <TextInput
                         id="current_password"
@@ -64,7 +64,7 @@ export default function UpdatePasswordForm({ className }) {
                 </div>
 
                 <div>
-                    <InputLabel for="password" value="New Password" />
+                    <InputLabel for="password" value="Nova lozinka" />
 
                     <TextInput
                         id="password"
@@ -80,7 +80,7 @@ export default function UpdatePasswordForm({ className }) {
                 </div>
 
                 <div>
-                    <InputLabel for="password_confirmation" value="Confirm Password" />
+                    <InputLabel for="password_confirmation" value="Potvrdite lozinku" />
 
                     <TextInput
                         id="password_confirmation"
@@ -95,7 +95,7 @@ export default function UpdatePasswordForm({ className }) {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <PrimaryButton processing={processing}>Save</PrimaryButton>
+                    <PrimaryButton processing={processing}>Sačuvaj</PrimaryButton>
 
                     <Transition
                         show={recentlySuccessful}
@@ -103,7 +103,7 @@ export default function UpdatePasswordForm({ className }) {
                         leaveTo="opacity-0"
                         className="transition ease-in-out"
                     >
-                        <p className="text-sm text-gray-600">Saved.</p>
+                        <p className="text-sm text-gray-600">Sačuvano.</p>
                     </Transition>
                 </div>
             </form>

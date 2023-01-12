@@ -24,16 +24,16 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
     return (
         <section className={className}>
             <header>
-                <h2 className="text-lg font-medium text-gray-900">Profile Information</h2>
+                <h2 className="text-lg font-medium text-gray-900">Podaci o korisniku</h2>
 
                 <p className="mt-1 text-sm text-gray-600">
-                    Update your account's profile information and email address.
+                   Svi podaci o korisniku
                 </p>
             </header>
 
             <form onSubmit={submit} className="mt-6 space-y-6">
                 <div>
-                    <InputLabel for="name" value="Name" />
+                    <InputLabel for="name" value="Ime" />
 
                     <TextInput
                         id="name"
@@ -64,7 +64,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                     <InputError className="mt-2" message={errors.email} />
                 </div>
                 <div>
-                    <InputLabel for="nickname" value="Nickname" />
+                    <InputLabel for="nickname" value="Nadimak - kraće ime" />
 
                     <TextInput
                         id="nickname"
@@ -82,27 +82,27 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                 {mustVerifyEmail && user.email_verified_at === null && (
                     <div>
                         <p className="text-sm mt-2 text-gray-800">
-                            Your email address is unverified.
+                           Email adresa nije verifikovana
                             <Link
                                 href={route('verification.send')}
                                 method="post"
                                 as="button"
                                 className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                             >
-                                Click here to re-send the verification email.
+                               Kliknite ovde da vam pošaljemo link za verifikaciju
                             </Link>
                         </p>
 
                         {status === 'verification-link-sent' && (
                             <div className="mt-2 font-medium text-sm text-green-600">
-                                A new verification link has been sent to your email address.
+                                Novi verifikacioni link je poslat na vašu email adresu
                             </div>
                         )}
                     </div>
                 )}
 
                 <div className="flex items-center gap-4">
-                    <PrimaryButton processing={processing}>Save</PrimaryButton>
+                    <PrimaryButton processing={processing}>Sačuvaj</PrimaryButton>
 
                     <Transition
                         show={recentlySuccessful}
@@ -110,7 +110,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                         leaveTo="opacity-0"
                         className="transition ease-in-out"
                     >
-                        <p className="text-sm text-gray-600">Saved.</p>
+                        <p className="text-sm text-gray-600">Sačuvano.</p>
                     </Transition>
                 </div>
             </form>

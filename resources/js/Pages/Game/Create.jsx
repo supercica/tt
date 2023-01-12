@@ -43,7 +43,7 @@ function Create(props) {
         <AuthenticatedLayout
             auth={props.auth}
             errors={props.errors}
-            header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-100 leading-tight">Unesi novu
+            header={<h2 className="font-semibold text-xl text-gray-800  leading-tight">Unesi novu
                 igru</h2>}
         >
             <Head title="Unesi novu igru"/>
@@ -51,14 +51,14 @@ function Create(props) {
             <div className="sm:px-6 mt-6 w-full">
                 <div className="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
                     <form onSubmit={handleSubmit}>
-                        <div className="-mx-3 flex flex-wrap">
+                        <div className="my-3 flex flex-wrap">
                             <div className="w-full px-3 sm:w-2/3">
                         <InputLabel forInput="datum" value="Datum meča"/>
                         <input type="date" name="datum" value={data.date}
                                onChange={e => setData("date", e.target.value)}/>
                             </div>
                         </div>
-                        <div className="-mx-3 flex flex-wrap">
+                        <div className="mxy-3 flex flex-wrap">
                             <div className="w-full px-3 sm:w-2/3">
                         <InputLabel forInput="lokacija" value="Lokacija"/>
                         <Select options={lokacije}
@@ -66,7 +66,7 @@ function Create(props) {
                                 onChange={selectedOption => setData('location', selectedOption)}/>
                             </div>
                         </div>
-                        <div className="-mx-3 flex flex-wrap">
+                        <div className="my-3 flex flex-wrap">
                         <div className="w-full px-3 sm:w-2/3">
                             <InputLabel forInput="p1" value="Igrač 1"/>
                             <Select options={igraci}
@@ -79,7 +79,7 @@ function Create(props) {
                                    onChange={e => setData("g1", e.target.value)}/>
                         </div>
                         </div>
-                        <div className="-mx-3 flex flex-wrap">
+                        <div className="my-3 flex flex-wrap">
                         <div className="w-full px-3 sm:w-2/3">
                             <InputLabel forInput="p2" value="Igrač 2"/>
                             <Select options={igraci}

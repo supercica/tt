@@ -62,7 +62,7 @@ function Edit(props) {
         <AuthenticatedLayout
             auth={props.auth}
             errors={props.errors}
-            header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-100 leading-tight">Uredi mec</h2>}
+            header={<h2 className="font-semibold text-xl text-gray-800  leading-tight">Uredi mec</h2>}
         >
             <Head title="Uredi mec"/>
 

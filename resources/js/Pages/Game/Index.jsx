@@ -12,14 +12,16 @@ const handleSelectChange = (query) =>{
         <AuthenticatedLayout
             auth={props.auth}
             errors={props.errors}
-            header={<h2 className="font-semibold text-xl text-gray-800 dark:text-gray-100 leading-tight"></h2>}
+            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Igre</h2>}
         >
             <Head title=""/>
 
             <div className="sm:px-6 mt-6 w-full">
                 <div className="bg-white py-4 md:py-7 px-4 md:px-8 xl:px-10">
-<div>
+<div className="flex justify-between">
        <SelectYear handleSelectChange={handleSelectChange} />
+
+    <Link href={route('games.create')} className="inline-flex items-center px-4 py-2 bg-cyan-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-cyan-700 focus:bg-cyan-700 active:bg-cyan-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150">Dodaj novu igru</Link>
 </div>
                     <div className="mt-7 overflow-x-auto">
                         <table className="w-full whitespace-nowrap">
